@@ -33,29 +33,25 @@ public class QuickSort {
         int pivot = arr[middle];
         System.out.println("Middle " + middle + " " + pivot);
 
-        int i = low, j = high;
-        while (i <= j) {
-            while (arr[i] < pivot) {
-                i++;
+        int lw = low, hi = high;
+        while (lw <= hi) {
+            while (arr[lw] < pivot) {
+                lw++;
             }
-            while (arr[j] > pivot) {
-                j--;
+            while (arr[hi] > pivot) {
+                hi--;
             }
-            System.out.println(">>>>>>>>>>>>> $$ij " + i + " " + j);
-            if(i <= j){
-                swap(arr, i, j);
-                i++;
-                j--;
+            if(lw <= hi){
+                swap(arr, lw, hi);
+                lw++;
+                hi--;
             }
-            System.out.println(" >>>>> " + Arrays.toString(arr));
         }
-        System.out.println(">>>>>>>>>>>>> 1 " + i + " " + j);
-        System.out.println(">>>>>>>>>>>>> 2 " + low + " " + high);
-        if(low <= j){
-            quickSort(arr, low, j);
+        if(low <= hi) {
+            quickSort(arr, low, hi);
         }
-        if(high > i ){
-            quickSort(arr, i, high);
+        if(high > lw ){
+            quickSort(arr, lw, high);
         }
     }
 
