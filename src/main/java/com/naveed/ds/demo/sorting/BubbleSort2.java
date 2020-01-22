@@ -12,29 +12,25 @@ import java.util.Arrays;
  * @author Naveedur Rahman
  * @email naveed6464@gmail.com
  * @version 1.0
- * @since Jan 7, 2020
- *
+ * @since Jan 22, 2020
+ * 
  * O(n2)
- *
+ * 
  */
-public class SelectiionSort {
+public class BubbleSort2 {
 
     public static void main(String[] args) {
         int[] arr = new int[]{53, 22, 66, 3, 36, 93, 27, 18, 40};
-        selectionSort(arr, 0, arr.length);
+        bubbleSort(arr, 0, arr.length - 1);
         System.out.println(" Sorted " + Arrays.toString(arr));
     }
 
-    private static void selectionSort(int[] arr, int low, int high) {
-        for (int pass = low; pass < high - 1; pass++) {
-            int min = pass;
-            for (int i = pass + 1; i < high; i++) {
-                if (arr[i] < arr[min]) {
-                    min = i;
+    private static void bubbleSort(int[] arr, int low, int high) {
+        for (int pass = low; pass < high; pass++) {
+            for (int i = high; i > pass; i--) {                
+                if (arr[i] < arr[pass]) {
+                    swap(arr, i, pass);
                 }
-            }
-            if (min != pass) {
-                swap(arr, min, pass);
             }
         }
     }

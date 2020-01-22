@@ -23,13 +23,12 @@ public class BubbleSort {
     }
 
     private static void bubbleSort(Integer[] arr, int low, int high) {
-        Integer d;
         for (int i = high; i > low; i--) {
             boolean isSorted = true;
             for (int j = low; j < i; j++) {
                 if (arr[j].compareTo(arr[j + 1]) > 0) {
                     isSorted = false;
-                    d = arr[j + 1];
+                    Integer d = arr[j + 1];
                     arr[j + 1] = arr[j];
                     arr[j] = d;
                 }

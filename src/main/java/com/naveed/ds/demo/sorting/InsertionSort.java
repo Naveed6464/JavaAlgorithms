@@ -25,7 +25,7 @@ public class InsertionSort {
     private static void insertionSort(Integer[] arr, int from, int to) {
         Integer d;
         for (int i = from; i <= to; i++) {
-            d = arr[i];
+                d = arr[i];
             int j = i;
             while (j > from && arr[j - 1].compareTo(d) > 0) {
                 arr[j] = arr[j - 1];
